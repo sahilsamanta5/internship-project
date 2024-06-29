@@ -1,0 +1,22 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: sahilsamanta5
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: sahil-internship-project
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: sahil-python-serverless
+
+provider:
+  name: aws
+  runtime: python3.12
+
+plugins:
+  - serverless-python-requirements
+  
+custom:
+  pythonRequirements:
+    dockerizePip: true
+
+
+functions:
+  hello:
+    handler: handler.hello
